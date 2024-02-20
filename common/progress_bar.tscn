@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://caqmojs4j7m4"]
+
+[node name="ProgressBar" type="ProgressBar"]
+offset_right = 289.0
+offset_bottom = 27.0
+step = 1.0
+rounded = true
+show_percentage = false

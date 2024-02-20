@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://lwu51sd202jc"
-path="res://.godot/imported/fall.png-6ebf2fe75cb0a42060b199caa6d20ee8.ctex"
+uid="uid://ccpmqihpeh2ar"
+path="res://.godot/imported/jump.png-e1e6165fb585ef584fdcf8183374be0d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/fall.png"
-dest_files=["res://.godot/imported/fall.png-6ebf2fe75cb0a42060b199caa6d20ee8.ctex"]
+source_file="res://player/assets/textures/jump.png"
+dest_files=["res://.godot/imported/jump.png-e1e6165fb585ef584fdcf8183374be0d.ctex"]
 
 [params]
 

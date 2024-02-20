@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bog6bsuxg82h2"
-path="res://.godot/imported/floating_flap.png-48758f9b8990748d6ad0f17a2c86681f.ctex"
+uid="uid://c6sxikox5o81p"
+path="res://.godot/imported/climb_back.png-bbcc7b2c1aa7abd7d22ff198a4746144.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/floating_flap.png"
-dest_files=["res://.godot/imported/floating_flap.png-48758f9b8990748d6ad0f17a2c86681f.ctex"]
+source_file="res://player/assets/textures/climb_back.png"
+dest_files=["res://.godot/imported/climb_back.png-bbcc7b2c1aa7abd7d22ff198a4746144.ctex"]
 
 [params]
 

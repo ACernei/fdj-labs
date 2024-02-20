@@ -1,0 +1,145 @@
+[gd_scene load_steps=5 format=3 uid="uid://dsur8f3dtouox"]
+
+[ext_resource type="PackedScene" uid="uid://caqmojs4j7m4" path="res://common/progress_bar.tscn" id="1_ulpvd"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_yp3db"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n3eri"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dhyqm"]
+bg_color = Color(0.243137, 0.603922, 0.0745098, 1)
+
+[node name="GameOver" type="CanvasLayer"]
+
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(514, 288)
+scale = Vector2(780, 456)
+mesh = SubResource("QuadMesh_yp3db")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+position = Vector2(514.125, 288)
+scale = Vector2(772.25, 448)
+mesh = SubResource("QuadMesh_yp3db")
+
+[node name="MeshInstance2D3" type="MeshInstance2D" parent="."]
+modulate = Color(0.686275, 0.686275, 0.686275, 1)
+position = Vector2(514.125, 296)
+scale = Vector2(772.25, 100)
+mesh = SubResource("QuadMesh_yp3db")
+
+[node name="Home" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -288.0
+offset_top = 96.0
+offset_right = -129.0
+offset_bottom = 170.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Home"
+
+[node name="PlayAgain" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -104.0
+offset_top = 96.0
+offset_right = 55.0
+offset_bottom = 170.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Play Again"
+
+[node name="ChangeGame" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 80.0
+offset_top = 96.0
+offset_right = 289.0
+offset_bottom = 168.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Change Game"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -308.0
+offset_top = 92.0
+offset_right = 304.0
+offset_bottom = 152.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 40
+text = "RUNNING TRAINING COMPLETE"
+
+[node name="DistanceLabel" type="RichTextLabel" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -192.0
+offset_top = 160.0
+offset_bottom = 195.0
+grow_horizontal = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 24
+text = "Distance:"
+
+[node name="LevelLabel" type="RichTextLabel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -144.5
+offset_top = -39.5
+offset_right = 55.5
+offset_bottom = 1.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 24
+text = "Running: Lvl "
+
+[node name="CoinsLabel" type="RichTextLabel" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -192.0
+offset_top = 200.0
+offset_bottom = 235.0
+grow_horizontal = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 24
+text = "Coins:"
+
+[node name="ProgressBar" parent="." instance=ExtResource("1_ulpvd")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -144.5
+offset_top = 9.5
+offset_right = 144.5
+offset_bottom = 36.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_n3eri")
+theme_override_styles/fill = SubResource("StyleBoxFlat_dhyqm")
