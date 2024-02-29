@@ -1,0 +1,76 @@
+[gd_scene load_steps=2 format=3 uid="uid://cltin8n3tnhk5"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_br3r8"]
+
+[node name="Defeat" type="CanvasLayer"]
+
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(514, 288)
+scale = Vector2(780, 456)
+mesh = SubResource("QuadMesh_br3r8")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+position = Vector2(514.125, 288)
+scale = Vector2(772.25, 448)
+mesh = SubResource("QuadMesh_br3r8")
+
+[node name="MeshInstance2D3" type="MeshInstance2D" parent="."]
+modulate = Color(0.686275, 0.686275, 0.686275, 1)
+position = Vector2(514.125, 296)
+scale = Vector2(772.25, 100)
+mesh = SubResource("QuadMesh_br3r8")
+
+[node name="Home" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = 96.0
+offset_right = 79.0
+offset_bottom = 170.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Home"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -99.0
+offset_top = -128.0
+offset_right = 101.0
+offset_bottom = -68.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 40
+text = "YOU LOST"
+fit_content = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -232.0
+offset_top = -24.0
+offset_right = 232.0
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 40
+text = "You Need to Train More"
+fit_content = true

@@ -1,6 +1,5 @@
-[gd_scene load_steps=15 format=3 uid="uid://blaapuyyxsiic"]
+[gd_scene load_steps=14 format=3 uid="uid://blaapuyyxsiic"]
 
-[ext_resource type="Script" path="res://common/player_movement.gd" id="1_53h51"]
 [ext_resource type="Texture2D" uid="uid://lwu51sd202jc" path="res://player/assets/fall.png" id="2_s1lgn"]
 [ext_resource type="Shape2D" uid="uid://c5ppvn8pnaakw" path="res://colision_shape/player_standing.tres" id="3_il84o"]
 [ext_resource type="Texture2D" uid="uid://d1s5xohwqq3jf" path="res://player/assets/crawl.png" id="4_4dym2"]
@@ -13,19 +12,19 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/path = NodePath("Sprite2D:hframes")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("2_s1lgn")]
+"values": [4]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/path = NodePath("Sprite2D:vframes")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -37,26 +36,14 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite2D:vframes")
+tracks/2/path = NodePath("Sprite2D:frame_coords")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [1]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Sprite2D:frame")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
+"values": [Vector2i(0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_xanua"]
@@ -336,13 +323,15 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody2D"]
-
-script = ExtResource("1_53h51")
+top_level = true
+light_mask = 2
+visibility_layer = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -64)
 scale = Vector2(4, 4)
-texture = ExtResource("2_s1lgn")
+texture = ExtResource("5_sf1ol")
+hframes = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -40)
