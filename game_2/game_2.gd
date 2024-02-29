@@ -11,7 +11,7 @@ var obstacle_6_scene = preload("res://game_2/obstacle/obstacle_6.tscn")
 var obstacle_types := [obstacle_1_scene, obstacle_2_scene, obstacle_3_scene, obstacle_4_scene, obstacle_5_scene, obstacle_6_scene]
 var obstacles : Array
 
-var coin_scene  = preload("res://common/coin.tscn")
+var coin_scene  = preload("res://game_2/coin_2.tscn")
 var coins : Array
 
 #game variables

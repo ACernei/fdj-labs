@@ -6,7 +6,7 @@ var ground_scene = preload("res://game_1/obstacle/ground.tscn")
 var obstacle_1_scene = preload("res://game_1/obstacle/obstacle_1.tscn")
 var obstacle_2_scene = preload("res://game_1/obstacle/obstacle_2.tscn")
 var obstacle_3_scene = preload("res://game_1/obstacle/obstacle_3.tscn")
-var coin_scene  = preload("res://common/coin.tscn")
+var coin_scene  = preload("res://game_1/coin_1.tscn")
 var obstacle_types := [obstacle_1_scene, obstacle_2_scene, obstacle_3_scene]
 var obstacles : Array
 var coins : Array
@@ -26,9 +26,9 @@ var ground_height : int
 var last_obs
 var obstacle_disctance : int = 150
 var game_running : bool
-var coin_counter: int
+#var coin_counter: int
 var coins_collected: int = 0
-var total_score: int = 0
+#var total_score: int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -51,7 +51,6 @@ func new_game():
 	#reset variables
 	$Score.show()
 	score = 0
-	coins_collected = 0
 	obstacle_disctance = 150
 	game_running = true
 	get_tree().paused = false
@@ -147,12 +146,12 @@ func show_score():
 func game_over():
 	get_tree().paused = true
 	game_running = false
-	coin_counter += coins_collected
-	print(coin_counter)
+	global.total_coins += coins_collected
+	print(global.total_coins)
 	$Score.hide()
 	$GameOver.get_node("DistanceLabel").text = "Distance: 	" + str(score / SCORE_MODIFIER)
 	$GameOver.get_node("CoinsLabel").text = "Coins: 		" + str(coins_collected)
-	total_score += score / SCORE_MODIFIER / 20
-	$GameOver.get_node("ProgressBar").value = total_score
+	global.run_score += score / SCORE_MODIFIER / 20
+	$GameOver.get_node("ProgressBar").value = global.run_score
 	$GameOver.get_node("LevelLabel").text = "Running: Lvl " + str($GameOver.get_node("ProgressBar").value)
 	$GameOver.show()

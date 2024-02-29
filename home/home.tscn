@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://0mq4kvghi3pe"]
+[gd_scene load_steps=10 format=3 uid="uid://cabwaf1gh2i1f"]
 
 [ext_resource type="Script" path="res://home/home.gd" id="1_0l073"]
 [ext_resource type="PackedScene" uid="uid://cyia8pglf3i6p" path="res://home/obstacle/ground.tscn" id="1_jyhuc"]

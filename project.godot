@@ -16,6 +16,10 @@ config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 run/size/viewport_height=180
 
+[autoload]
+
+global="*res://global/global.gd"
+
 [display]
 
 window/size/viewport_width=1024
