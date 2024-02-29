@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6sxikox5o81p"
-path="res://.godot/imported/climb_back.png-bbcc7b2c1aa7abd7d22ff198a4746144.ctex"
+uid="uid://lwu51sd202jc"
+path="res://.godot/imported/fall.png-1a80f8931ff7906edf87c09235900022.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://player/assets/textures/climb_back.png"
-dest_files=["res://.godot/imported/climb_back.png-bbcc7b2c1aa7abd7d22ff198a4746144.ctex"]
+source_file="res://player/assets/fall.png"
+dest_files=["res://.godot/imported/fall.png-1a80f8931ff7906edf87c09235900022.ctex"]
 
 [params]
 

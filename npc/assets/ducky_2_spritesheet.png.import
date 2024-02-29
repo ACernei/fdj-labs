@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bog6bsuxg82h2"
-path="res://.godot/imported/floating_flap.png-5a26e4b48312e98ce8a5877ca8b537a4.ctex"
+uid="uid://chhnv1ijjihky"
+path="res://.godot/imported/ducky_2_spritesheet.png-c9dce794051fcddf2288c9b964746f8f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://player/assets/textures/floating_flap.png"
-dest_files=["res://.godot/imported/floating_flap.png-5a26e4b48312e98ce8a5877ca8b537a4.ctex"]
+source_file="res://npc/assets/ducky_2_spritesheet.png"
+dest_files=["res://.godot/imported/ducky_2_spritesheet.png-c9dce794051fcddf2288c9b964746f8f.ctex"]
 
 [params]
 
