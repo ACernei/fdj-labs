@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://b1ayqdsvey6de"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_p2asf"]
+size = Vector2(1000, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qh6xh"]
+size = Vector2(96.3333, 919.015)
+
+[node name="Obstacle5" type="Area2D"]
+
+[node name="MeshInstance2D4" type="MeshInstance2D" parent="."]
+position = Vector2(24.1566, 256.09)
+scale = Vector2(0.0481808, 5.12179)
+mesh = SubResource("QuadMesh_p2asf")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="."]
+position = Vector2(24.0833, 256.054)
+scale = Vector2(0.5, 0.557)
+shape = SubResource("RectangleShape2D_qh6xh")

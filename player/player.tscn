@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://blaapuyyxsiic"]
 
-[ext_resource type="Script" path="res://game_1/player.gd" id="1_gupde"]
+[ext_resource type="Script" path="res://game_1/player_1.gd" id="1_642e2"]
 [ext_resource type="Texture2D" uid="uid://lwu51sd202jc" path="res://player/assets/textures/fall.png" id="2_7vwx2"]
 [ext_resource type="Texture2D" uid="uid://cfdnhord6nbjm" path="res://player/assets/textures/idle.png" id="2_o6vdw"]
 [ext_resource type="Texture2D" uid="uid://b45vaeonx26j1" path="res://player/assets/textures/walk.png" id="4_ffj4g"]
@@ -284,10 +284,7 @@ _data = {
 
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(0, -11)
-script = ExtResource("1_gupde")
-speed = 500
-gravity = 20
-jump_force = 400
+script = ExtResource("1_642e2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(3, -5)
