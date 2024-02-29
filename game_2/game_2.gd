@@ -1,5 +1,5 @@
 extends Node
-
+var house = preload("res://home/home.tscn")
 #preload obstacles
 var ground_scene = preload("res://game_2/obstacle/ground.tscn")
 var obstacle_1_scene = preload("res://game_2/obstacle/obstacle_1.tscn")
@@ -8,9 +8,10 @@ var obstacle_3_scene = preload("res://game_2/obstacle/obstacle_3.tscn")
 var obstacle_4_scene = preload("res://game_2/obstacle/obstacle_4.tscn")
 var obstacle_5_scene = preload("res://game_2/obstacle/obstacle_5.tscn")
 var obstacle_6_scene = preload("res://game_2/obstacle/obstacle_6.tscn")
-var coin_scene  = preload("res://common/coin.tscn")
-var obstacle_types := [obstacle_1_scene, obstacle_2_scene, obstacle_3_scene, obstacle_4_scene, obstacle_6_scene]
+var obstacle_types := [obstacle_1_scene, obstacle_2_scene, obstacle_3_scene, obstacle_4_scene, obstacle_5_scene, obstacle_6_scene]
 var obstacles : Array
+
+var coin_scene  = preload("res://common/coin.tscn")
 var coins : Array
 
 #game variables
@@ -38,9 +39,19 @@ const MAX_DIFFICULTY : int = 5
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	screen_size = get_window().size
-	#ground_height = $Ground.get_node("Sprite2D").texture.get_height()
 	$GameOver.get_node("PlayAgain").pressed.connect(new_game)
+	$GameOver.get_node("Home").pressed.connect(go_home)
+	$GameOver.get_node("ChangeGame").pressed.connect(change_game)
 	new_game()
+	
+func go_home():
+	#get_tree().change_scene_to_packed(house)
+	get_tree().call_deferred("change_scene_to_file", "res://home/house.tscn")
+	#get_tree().change_scene_to_file.bind("res://home/house.tscn").call_deferred()
+	print("Home")
+	
+func change_game():
+	get_tree().change_scene_to_file("res://game_1/game_1.tscn")
 
 func new_game():
 	#reset variables
@@ -71,7 +82,7 @@ func new_game():
 func _process(delta):
 	$Background.position.x = $Camera2D.position.x - screen_size.x/2.5
 	if game_running:
-		obstacle_disctance += 1000
+		obstacle_disctance += 700
 		adjust_difficulty()
 		generate_obs()
 		show_score()
@@ -110,7 +121,7 @@ func generate_obs():
 		var max_obs = difficulty + 1
 		for i in range(randi() % max_obs + 1):
 			obs = obs_type.instantiate()
-			var obs_x : int = obstacle_disctance + (i * 100)
+			var obs_x : int = obstacle_disctance + randi_range(100, 333)
 			var obs_y : int = ground_height -75
 		
 			if last_obs != null and randi_range(0,1) == 1:
@@ -157,9 +168,11 @@ func game_over():
 	game_running = false
 	coin_counter += coins_collected
 	$Score.hide()
+	$GameOver.get_node("RichTextLabel").text = "	Jumping Training Complete"
 	$GameOver.get_node("DistanceLabel").text = "Distance: 	" + str(score / SCORE_MODIFIER)
 	$GameOver.get_node("CoinsLabel").text = "Coins: 		" + str(coins_collected)
 	total_score += score / SCORE_MODIFIER / 20
 	$GameOver.get_node("ProgressBar").value = total_score
-	$GameOver.get_node("LevelLabel").text = "Running: Lvl " + str($GameOver.get_node("ProgressBar").value)
+	$GameOver.get_node("LevelLabel").text = "Jumping: Lvl " + str($GameOver.get_node("ProgressBar").value)
+	
 	$GameOver.show()

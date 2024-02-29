@@ -1,6 +1,7 @@
 extends Node
 
 #preload obstacles
+var asd = 10
 var ground_scene = preload("res://game_1/obstacle/ground.tscn")
 var obstacle_1_scene = preload("res://game_1/obstacle/obstacle_1.tscn")
 var obstacle_2_scene = preload("res://game_1/obstacle/obstacle_2.tscn")
@@ -34,8 +35,18 @@ func _ready():
 	screen_size = get_window().size
 	#ground_height = $Ground.get_node("Sprite2D").texture.get_height()
 	$GameOver.get_node("PlayAgain").pressed.connect(new_game)
+	$GameOver.get_node("Home").pressed.connect(go_home)
+	$GameOver.get_node("ChangeGame").pressed.connect(change_game)
 	new_game()
 
+func go_home():
+	get_tree().change_scene_to_file("res://home/home.tscn")
+	print("Home")
+
+func change_game():
+	get_tree().change_scene_to_file("res://game_2/game_2.tscn")
+	print("Change")
+	
 func new_game():
 	#reset variables
 	$Score.show()

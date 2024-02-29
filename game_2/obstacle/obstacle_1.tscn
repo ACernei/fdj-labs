@@ -33,3 +33,13 @@ mesh = SubResource("QuadMesh_4murm")
 position = Vector2(7.95833, 512)
 scale = Vector2(0.5, 0.557)
 shape = SubResource("RectangleShape2D_rpisw")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = -16.0
+offset_top = 200.0
+offset_right = 32.0
+offset_bottom = 256.0
+size_flags_horizontal = 4
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 40
+text = " 3"

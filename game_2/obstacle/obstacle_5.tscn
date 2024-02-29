@@ -4,7 +4,7 @@
 size = Vector2(1000, 100)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qh6xh"]
-size = Vector2(96.3333, 919.015)
+size = Vector2(46, 919.015)
 
 [node name="Obstacle5" type="Area2D"]
 
@@ -14,6 +14,15 @@ scale = Vector2(0.0481808, 5.12179)
 mesh = SubResource("QuadMesh_p2asf")
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="."]
-position = Vector2(24.0833, 256.054)
+position = Vector2(23.5, 256.054)
 scale = Vector2(0.5, 0.557)
 shape = SubResource("RectangleShape2D_qh6xh")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_top = 456.0
+offset_right = 48.0
+offset_bottom = 512.0
+size_flags_horizontal = 4
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 40
+text = " 1"

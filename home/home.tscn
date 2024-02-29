@@ -1,15 +1,21 @@
-[gd_scene load_steps=7 format=3 uid="uid://cabwaf1gh2i1f"]
+[gd_scene load_steps=10 format=3 uid="uid://0mq4kvghi3pe"]
 
+[ext_resource type="Script" path="res://home/home.gd" id="1_0l073"]
 [ext_resource type="PackedScene" uid="uid://cyia8pglf3i6p" path="res://home/obstacle/ground.tscn" id="1_jyhuc"]
 [ext_resource type="PackedScene" uid="uid://be12k7t1stmnn" path="res://home/obstacle/walls.tscn" id="2_iq6uv"]
 [ext_resource type="PackedScene" uid="uid://blaapuyyxsiic" path="res://player/player.tscn" id="3_etmam"]
 [ext_resource type="PackedScene" uid="uid://dsa81h5q7ma13" path="res://npc/trainer.tscn" id="4_x1eyw"]
 [ext_resource type="PackedScene" uid="uid://d4iiyn6fyb1yw" path="res://npc/shop.tscn" id="5_4jud5"]
+[ext_resource type="Script" path="res://game_1/player_1.gd" id="6_gkc3v"]
 [ext_resource type="PackedScene" uid="uid://c3ovlof4vvo67" path="res://npc/battle.tscn" id="6_nglp1"]
+[ext_resource type="PackedScene" uid="uid://xvgg748kutpg" path="res://common/score.tscn" id="9_lk5ov"]
 
-[node name="home" type="Node2D"]
+[node name="home" type="Node"]
+script = ExtResource("1_0l073")
 
-[node name="Walls" parent="." instance=ExtResource("2_iq6uv")]
+[node name="Player" parent="." instance=ExtResource("3_etmam")]
+position = Vector2(96, 528)
+script = ExtResource("6_gkc3v")
 
 [node name="Trainer" parent="." instance=ExtResource("4_x1eyw")]
 position = Vector2(312, 488)
@@ -21,7 +27,8 @@ position = Vector2(544, 488)
 position = Vector2(840, 455)
 scale = Vector2(4, 4)
 
-[node name="Player" parent="." instance=ExtResource("3_etmam")]
-position = Vector2(128, 320)
-
 [node name="Ground" parent="." instance=ExtResource("1_jyhuc")]
+
+[node name="Walls" parent="." instance=ExtResource("2_iq6uv")]
+
+[node name="Score" parent="." instance=ExtResource("9_lk5ov")]
