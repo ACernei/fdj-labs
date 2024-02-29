@@ -17,9 +17,9 @@ const CAM_START_POS := Vector2i(576, 324)
 var score : int
 const SCORE_MODIFIER : int = 100
 var speed : float
-const START_SPEED : float = 10.0
-const MAX_SPEED : int = 50
-const SPEED_MODIFIER : int = 1000
+const START_SPEED : float = 5.0
+const MAX_SPEED : int = 25
+const SPEED_MODIFIER : int = 2000
 var screen_size : Vector2i
 var ground_height : int
 var last_obs
