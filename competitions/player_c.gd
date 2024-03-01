@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
-@export var speed = 600
+@export var speed = global.run_score * 5
 @export var gravity = 30 
-@export var jump_force = 300
+@export var jump_force = global.jump_score
 
 @onready var ap = $AnimationPlayer
 
@@ -15,7 +15,7 @@ func _physics_process(delta):
 	
 	move_and_slide()
 	update_animation()
-	print(global.nr_of_coins)
+	#print(global.nr_of_coins)
 
 func update_animation():
 	if is_on_floor():

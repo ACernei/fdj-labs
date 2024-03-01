@@ -11,7 +11,15 @@ var is_crawling = false
 
 var player_standing = preload("res://colision_shape/player_standing.tres")
 var player_crawl = preload("res://colision_shape/player_crawling.tres")
-func _physics_process(delta):
+
+func _physics_process(delta):		
+	if Input.is_action_just_pressed("train"):
+		train()
+	if Input.is_action_just_pressed("compete"):
+		battle()
+	if Input.is_action_just_pressed("shop"):
+		shop()
+	
 	if !is_on_floor():
 		velocity.y += gravity
 		
@@ -32,6 +40,15 @@ func _physics_process(delta):
 	
 	update_animation(horizontal_direction)
 
+func train():
+	get_tree().change_scene_to_file("res://trainings/trainings.tscn")
+	
+func shop():
+	get_tree().change_scene_to_file("res://shop/shop.tscn")
+	
+func battle():
+	get_tree().change_scene_to_file("res://competitions/competition_1.tscn")
+	
 func update_animation(horizontal_direction):
 	if is_on_floor():
 		if horizontal_direction == 0:

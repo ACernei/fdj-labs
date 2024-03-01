@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://chhnv1ijjihky" path="res://npc/assets/ducky_2_spritesheet.png" id="1_8p1nv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qv1qg"]
-size = Vector2(20, 26)
+size = Vector2(40, 26)
 
 [sub_resource type="Animation" id="Animation_e6dat"]
 length = 0.6

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dk8ua075qe1of"]
+[gd_scene load_steps=10 format=3 uid="uid://dk8ua075qe1of"]
 
 [ext_resource type="Script" path="res://competitions/competition_1.gd" id="1_ib43g"]
 [ext_resource type="PackedScene" uid="uid://v6gyfof1nj1i" path="res://enemy/enemy.tscn" id="1_pcmvq"]
@@ -8,8 +8,10 @@
 [ext_resource type="PackedScene" uid="uid://dfdg0d1mnlscy" path="res://competitions/finish.tscn" id="5_vllya"]
 [ext_resource type="PackedScene" uid="uid://cltin8n3tnhk5" path="res://common/defeat.tscn" id="7_6pyk5"]
 [ext_resource type="PackedScene" uid="uid://ds4167afjvto0" path="res://common/victory.tscn" id="8_vup3u"]
+[ext_resource type="PackedScene" uid="uid://caqmojs4j7m4" path="res://common/progress_bar.tscn" id="9_0v06o"]
 
 [node name="Competition1" type="Node2D"]
+process_mode = 1
 script = ExtResource("1_ib43g")
 
 [node name="Enemy" parent="." instance=ExtResource("1_pcmvq")]
@@ -23,6 +25,12 @@ script = ExtResource("3_w7f5o")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 
+[node name="EnergyBar" parent="Player" instance=ExtResource("9_0v06o")]
+offset_left = -472.0
+offset_top = -256.0
+offset_right = -183.0
+offset_bottom = -229.0
+
 [node name="Ground" parent="." instance=ExtResource("3_wfpb8")]
 
 [node name="Finish" parent="." instance=ExtResource("5_vllya")]
@@ -30,5 +38,7 @@ position = Vector2(1504, 312)
 collision_mask = 2
 
 [node name="Defeat" parent="." instance=ExtResource("7_6pyk5")]
+process_mode = 2
 
 [node name="Victory" parent="." instance=ExtResource("8_vup3u")]
+process_mode = 2

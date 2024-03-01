@@ -38,6 +38,7 @@ bg_color = Color(0.694118, 0.596078, 0.207843, 1)
 bg_color = Color(1, 0.905882, 0.141176, 1)
 
 [node name="Shop" type="Node2D"]
+process_mode = 3
 script = ExtResource("1_jnh56")
 
 [node name="MeshInstance2D2" type="MeshInstance2D" parent="."]

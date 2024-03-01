@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://ic3avuokmsyt" path="res://npc/assets/ducky_3_spritesheet.png" id="1_6n200"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wehx8"]
-size = Vector2(20, 26)
+size = Vector2(37, 25)
 
 [sub_resource type="Animation" id="Animation_fsujd"]
 length = 0.001
@@ -124,7 +124,7 @@ hframes = 6
 vframes = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(4, 12)
+position = Vector2(-1, 14)
 scale = Vector2(4, 4)
 shape = SubResource("RectangleShape2D_wehx8")
 

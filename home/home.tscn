@@ -20,17 +20,17 @@ bg_color = Color(0.192157, 0.368627, 0.109804, 1)
 process_mode = 3
 script = ExtResource("1_0l073")
 
+[node name="Ground" parent="." instance=ExtResource("1_jyhuc")]
+
 [node name="Trainer" parent="." instance=ExtResource("4_x1eyw")]
-position = Vector2(312, 488)
+position = Vector2(280, 492)
 
 [node name="Battle" parent="." instance=ExtResource("6_nglp1")]
-position = Vector2(544, 488)
+position = Vector2(536, 492)
 
 [node name="Shop" parent="." instance=ExtResource("5_4jud5")]
-position = Vector2(840, 455)
+position = Vector2(840, 460)
 scale = Vector2(4, 4)
-
-[node name="Ground" parent="." instance=ExtResource("1_jyhuc")]
 
 [node name="Walls" parent="." instance=ExtResource("2_iq6uv")]
 
@@ -118,3 +118,60 @@ fit_content = true
 [node name="Player" parent="." instance=ExtResource("3_etmam")]
 position = Vector2(96, 528)
 script = ExtResource("9_gs1ng")
+
+[node name="TrainLabel" type="RichTextLabel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -248.0
+offset_top = 118.0
+offset_right = -200.0
+offset_bottom = 160.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 30
+text = "[z]"
+fit_content = true
+
+[node name="CompeteLabel" type="RichTextLabel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 16.0
+offset_top = 112.0
+offset_right = 64.0
+offset_bottom = 154.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 30
+text = "[x]"
+fit_content = true
+
+[node name="ShopLabel" type="RichTextLabel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 304.0
+offset_top = 27.0
+offset_right = 344.0
+offset_bottom = 69.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 30
+text = "[c]"
+fit_content = true

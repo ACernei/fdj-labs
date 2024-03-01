@@ -1,6 +1,7 @@
 extends Node
 
-var total_coins = 0
-var run_score = 27
-var jump_score = 31
-var duck_energy = 85
+var total_coins = 100
+var run_score = 80
+var jump_score = 30
+var duck_energy = 50
+var jump_training_available = false

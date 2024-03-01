@@ -21,8 +21,8 @@ const CAM_START_POS := Vector2i(576, 324)
 var score : int
 const SCORE_MODIFIER : int = 100
 var speed : float
-const START_SPEED : float = 50.0
-const MAX_SPEED : int = 75
+const START_SPEED : float = 20
+const MAX_SPEED : int = 50
 const SPEED_MODIFIER : int = 5000
 var screen_size : Vector2i
 var ground_height : int = 50
@@ -151,13 +151,13 @@ func adjust_difficulty():
 func game_over():
 	get_tree().paused = true
 	game_running = false
-	coin_counter += coins_collected
+	global.total_coins += coins_collected
 	$Score.hide()
 	$GameOver.get_node("RichTextLabel").text = "	Jumping Training Complete"
 	$GameOver.get_node("DistanceLabel").text = "Distance: 	" + str(score / SCORE_MODIFIER)
 	$GameOver.get_node("CoinsLabel").text = "Coins: 		" + str(coins_collected)
-	total_score += score / SCORE_MODIFIER / 20
-	$GameOver.get_node("ProgressBar").value = total_score
+	global.jump_score += score / SCORE_MODIFIER / 20
+	$GameOver.get_node("ProgressBar").value = global.jump_score
 	$GameOver.get_node("LevelLabel").text = "Jumping: Lvl " + str($GameOver.get_node("ProgressBar").value)
 	
 	$GameOver.show()
