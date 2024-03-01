@@ -1,0 +1,104 @@
+[gd_scene load_steps=3 format=3 uid="uid://drdc1uq8smuun"]
+
+[ext_resource type="Script" path="res://trainings/trainings.gd" id="1_pab7v"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_xay4p"]
+
+[node name="Trainings" type="Node2D"]
+process_mode = 3
+script = ExtResource("1_pab7v")
+
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(514, 288)
+scale = Vector2(780, 456)
+mesh = SubResource("QuadMesh_xay4p")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+position = Vector2(514.125, 288)
+scale = Vector2(772.25, 448)
+mesh = SubResource("QuadMesh_xay4p")
+
+[node name="Home" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 424.0
+offset_top = 384.0
+offset_right = 583.0
+offset_bottom = 458.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Home"
+metadata/_edit_use_anchors_ = true
+
+[node name="Fly" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 248.0
+offset_top = 241.0
+offset_right = 471.0
+offset_bottom = 315.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Fly"
+metadata/_edit_use_anchors_ = true
+
+[node name="Run" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 248.0
+offset_top = 153.0
+offset_right = 471.0
+offset_bottom = 227.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Run"
+metadata/_edit_use_anchors_ = true
+
+[node name="Jump" type="Button" parent="."]
+process_mode = 2
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 528.0
+offset_top = 242.0
+offset_right = 751.0
+offset_bottom = 316.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Jump"
+metadata/_edit_use_anchors_ = true
+
+[node name="Swim" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 528.0
+offset_top = 152.0
+offset_right = 751.0
+offset_bottom = 226.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Swim"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Run" to="." method="_on_run_pressed"]

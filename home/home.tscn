@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cabwaf1gh2i1f"]
+[gd_scene load_steps=12 format=3 uid="uid://cabwaf1gh2i1f"]
 
 [ext_resource type="Script" path="res://home/home.gd" id="1_0l073"]
 [ext_resource type="PackedScene" uid="uid://cyia8pglf3i6p" path="res://home/obstacle/ground.tscn" id="1_jyhuc"]
@@ -6,16 +6,19 @@
 [ext_resource type="PackedScene" uid="uid://blaapuyyxsiic" path="res://player/player.tscn" id="3_etmam"]
 [ext_resource type="PackedScene" uid="uid://dsa81h5q7ma13" path="res://npc/trainer.tscn" id="4_x1eyw"]
 [ext_resource type="PackedScene" uid="uid://d4iiyn6fyb1yw" path="res://npc/shop.tscn" id="5_4jud5"]
-[ext_resource type="Script" path="res://game_1/player_1.gd" id="6_gkc3v"]
 [ext_resource type="PackedScene" uid="uid://c3ovlof4vvo67" path="res://npc/battle.tscn" id="6_nglp1"]
-[ext_resource type="PackedScene" uid="uid://xvgg748kutpg" path="res://common/score.tscn" id="9_lk5ov"]
+[ext_resource type="Script" path="res://common/player_movement.gd" id="9_gs1ng"]
+[ext_resource type="PackedScene" uid="uid://caqmojs4j7m4" path="res://common/progress_bar.tscn" id="9_wu821"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4055l"]
+bg_color = Color(0.72549, 0.72549, 0.72549, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_geutw"]
+bg_color = Color(0.192157, 0.368627, 0.109804, 1)
 
 [node name="home" type="Node"]
+process_mode = 3
 script = ExtResource("1_0l073")
-
-[node name="Player" parent="." instance=ExtResource("3_etmam")]
-position = Vector2(96, 528)
-script = ExtResource("6_gkc3v")
 
 [node name="Trainer" parent="." instance=ExtResource("4_x1eyw")]
 position = Vector2(312, 488)
@@ -31,4 +34,87 @@ scale = Vector2(4, 4)
 
 [node name="Walls" parent="." instance=ExtResource("2_iq6uv")]
 
-[node name="Score" parent="." instance=ExtResource("9_lk5ov")]
+[node name="EnergyBar" parent="." instance=ExtResource("9_wu821")]
+offset_left = 60.0
+offset_top = 37.0
+offset_right = 349.0
+offset_bottom = 64.0
+theme_override_styles/background = SubResource("StyleBoxFlat_4055l")
+theme_override_styles/fill = SubResource("StyleBoxFlat_geutw")
+
+[node name="SpeedBar" parent="." instance=ExtResource("9_wu821")]
+offset_left = 60.0
+offset_top = 85.0
+offset_right = 349.0
+offset_bottom = 112.0
+theme_override_styles/background = SubResource("StyleBoxFlat_4055l")
+theme_override_styles/fill = SubResource("StyleBoxFlat_geutw")
+
+[node name="JumpBar" parent="." instance=ExtResource("9_wu821")]
+offset_left = 60.0
+offset_top = 141.0
+offset_right = 349.0
+offset_bottom = 168.0
+theme_override_styles/background = SubResource("StyleBoxFlat_4055l")
+theme_override_styles/fill = SubResource("StyleBoxFlat_geutw")
+
+[node name="EnergyLabel" type="RichTextLabel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -412.0
+offset_top = -253.0
+offset_right = -188.0
+offset_bottom = -193.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 20
+text = "Energy:		"
+fit_content = true
+
+[node name="SpeedLabel" type="RichTextLabel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -412.0
+offset_top = -204.0
+offset_right = -188.0
+offset_bottom = -144.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 20
+text = "Speed:		"
+fit_content = true
+
+[node name="JumpLabel" type="RichTextLabel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -412.0
+offset_top = -150.0
+offset_right = -188.0
+offset_bottom = -90.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 20
+text = "Jump:			"
+fit_content = true
+
+[node name="Player" parent="." instance=ExtResource("3_etmam")]
+position = Vector2(96, 528)
+script = ExtResource("9_gs1ng")

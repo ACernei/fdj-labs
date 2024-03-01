@@ -1,5 +1,5 @@
 extends Node
-var house = preload("res://home/home.tscn")
+
 #preload obstacles
 var ground_scene = preload("res://game_2/obstacle/ground.tscn")
 var obstacle_1_scene = preload("res://game_2/obstacle/obstacle_1.tscn")
@@ -40,18 +40,7 @@ const MAX_DIFFICULTY : int = 5
 func _ready():
 	screen_size = get_window().size
 	$GameOver.get_node("PlayAgain").pressed.connect(new_game)
-	$GameOver.get_node("Home").pressed.connect(go_home)
-	$GameOver.get_node("ChangeGame").pressed.connect(change_game)
 	new_game()
-	
-func go_home():
-	#get_tree().change_scene_to_packed(house)
-	get_tree().call_deferred("change_scene_to_file", "res://home/house.tscn")
-	#get_tree().change_scene_to_file.bind("res://home/house.tscn").call_deferred()
-	print("Home")
-	
-func change_game():
-	get_tree().change_scene_to_file("res://game_1/game_1.tscn")
 
 func new_game():
 	#reset variables
@@ -99,10 +88,6 @@ func _process(delta):
 		
 		#update score
 		score += speed
-		
-		#update ground position
-		#if $Camera2D.position.x > $Ground.position.x:
-			#print($Ground.position.x)
 		
 		#remove obstacles that have gone off screen
 		for obs in obstacles:
