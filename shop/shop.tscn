@@ -1,0 +1,108 @@
+[gd_scene load_steps=13 format=3 uid="uid://ccv62fgm7kwc1"]
+
+[ext_resource type="Script" path="res://shop/shop.gd" id="1_jnh56"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_i4tsr"]
+
+[sub_resource type="Gradient" id="Gradient_t4mxi"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(0.627451, 0.133333, 0.858824, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_p65i2"]
+gradient = SubResource("Gradient_t4mxi")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gfru8"]
+texture = SubResource("GradientTexture1D_p65i2")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gekup"]
+bg_color = Color(0.849255, 0.134086, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kn586"]
+bg_color = Color(0.8, 0.454902, 0.756863, 1)
+
+[sub_resource type="Gradient" id="Gradient_l88kv"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.929412, 0.823529, 0.0196078, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_wp4ot"]
+gradient = SubResource("Gradient_l88kv")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xj8gx"]
+texture = SubResource("GradientTexture1D_wp4ot")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eg833"]
+bg_color = Color(0.694118, 0.596078, 0.207843, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jpinx"]
+bg_color = Color(1, 0.905882, 0.141176, 1)
+
+[node name="Shop" type="Node2D"]
+script = ExtResource("1_jnh56")
+
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(514, 288)
+scale = Vector2(780, 456)
+mesh = SubResource("QuadMesh_i4tsr")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+position = Vector2(514.125, 288)
+scale = Vector2(772.25, 448)
+mesh = SubResource("QuadMesh_i4tsr")
+
+[node name="MeshInstance2D3" type="MeshInstance2D" parent="."]
+modulate = Color(0.686275, 0.686275, 0.686275, 1)
+position = Vector2(514.125, 462)
+scale = Vector2(772.25, 100)
+mesh = SubResource("QuadMesh_i4tsr")
+
+[node name="Home" type="Button" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 440.0
+offset_top = 432.0
+offset_right = 599.0
+offset_bottom = 506.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 30
+text = "Home"
+
+[node name="CoinsLabel" type="RichTextLabel" parent="."]
+offset_left = 696.0
+offset_top = 80.0
+offset_right = 888.0
+offset_bottom = 115.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 24
+text = "Coins:"
+metadata/_edit_use_anchors_ = true
+
+[node name="BuyDuck" type="Button" parent="."]
+offset_left = 320.0
+offset_top = 192.0
+offset_right = 512.0
+offset_bottom = 320.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_gfru8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gekup")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kn586")
+text = "DUCK $100"
+
+[node name="BuyFood" type="Button" parent="."]
+offset_left = 576.0
+offset_top = 192.0
+offset_right = 768.0
+offset_bottom = 320.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_xj8gx")
+theme_override_styles/hover = SubResource("StyleBoxFlat_eg833")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jpinx")
+text = "FOOD $5"
